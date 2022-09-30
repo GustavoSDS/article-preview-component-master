@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+:root {
+    --veryDarkGrayishBlue: hsl(217, 19%, 35%);
+    --desaturatedDarkBlue: hsl(214, 17%, 51%);
+    --grayishBlue: hsl(212, 23%, 69%);
+    --lightGrayishBlue: hsl(210, 46%, 95%);
+    --white: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--lightGrayishBlue);
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+}
+
+.card {
+    background-color: var(--white);
+    width: 330px;
+    height: 518px;
+    margin: 75px auto;
+    border-radius: 12px;
+    position: relative;
+}
+
+.card__picture {
+    background: url(./images/drawers.jpg);
+    background-size: cover;
+    background-position-y: -18px;
+    border-radius: 12px 12px 0 0;
+    width: 100%;
+    height: 200px;
+}
+
+.card__content__title {
+    color: var(--veryDarkGrayishBlue);
+    margin: 35px 30px 12px;
+    font-size: 1.24em;
+    line-height: 24px;
+}
+
+.card__content__description {
+    color: var(--desaturatedDarkBlue);
+    margin: 0 42px 30px 30px;
+    font-size: 1em;
+    line-height: 20px;
+}
+
+.card__content__buttom {
+    background-color: var(--lightGrayishBlue);
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 7px 7px;
+    z-index: 1;
+    transition: 300ms;
+}
+
+.card__content__buttom:hover {
+    cursor: pointer;
+    background-color: var(--desaturatedDarkBlue);
+}
+
+.card__content__buttom:hover path {
+    fill: var(--white);
+}
+
+/* Profile */
+.card__content__profile {
+    display: flex;
+    margin: 0 30px;
+}
+
+.card__content__profile__picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.card__content__profile__name {
+    color: var(--veryDarkGrayishBlue);
+    margin: 4px 0 2px 15px;
+    font-weight: 700;
+}
+
+.card__content__profile__date {
+    margin-left: 15px;
+    color: var(--grayishBlue);
+}
+
+/* Social icons */
+.card__content__social-icons {
+    background-color: var(--veryDarkGrayishBlue);
+    border-radius: 0 0 12px 12px;
+    bottom: 0;
+    display: none;
+    gap: 5px;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 69px;
+    padding: 20px;
+    transition: 400ms;
+}
+
+.card__content__social-icons__share {
+    text-transform: uppercase;
+    color: var(--grayishBlue);
+    letter-spacing: 4px;
+    margin-right: 10px;
+    font-weight: 500;
+}
+
+.card__content__social-icons a {
+    text-decoration: none;
+}
+
+.card__content__social-icons__icon {
+    margin: 0 8px;
+}
+
+.show{
+     display: flex;
+}
+
+.rotate{
+    transform: scale(1.2) rotate(315deg);
+    transition: 300ms;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* Desktop styles */
+@media (min-width: 745px) {
+
+    /* .container{
+        width: 1440px;
+        height: 800px;
+        margin: 0 auto;
+    } */
+    .card {
+        margin: 270px auto;
+        width: 730px;
+        height: 280px;
+        display: flex;
+    }
+
+    .card__picture {
+        width: 285px;
+        height: 100%;
+        background-position-y: unset;
+        background-repeat: no-repeat;
+        border-radius: 12px 0 0 12px;
+    }
+
+    .card__content {
+        width: 445px;
+        height: 100%;
+        padding: 0px 55px 30px 10px;
+    }
+
+    .card__content__title {
+        width: 335px;
+        margin-bottom: 11px;
+        font-size: 1.5em;
+        line-height: 26px;
+    }
+
+    .card__content__description {
+        width: 345px;
+        height: 65px;
+        margin-bottom: 17px;
+    }
+
+    .card__content__buttom {
+        width: 32px;
+        height: 32px;
+        padding: 8px;
+        right: 45px;
+        bottom: 30px;
+    }
+
+    .card__content__social-icons {
+        width: 250px;
+        height: 55px;
+        bottom: 80px;
+        right: -60px;
+        border-radius: 8px;
+    }
+
+    .card__content__social-icons::after {
+        content: "";
+        border: 10px solid white;
+        border-color: var(--veryDarkGrayishBlue) transparent transparent;
+        position: absolute;
+        left: 118px;
+        top: 100%;
+    }
+}
